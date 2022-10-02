@@ -43,10 +43,12 @@ speechBtn.addEventListener("click", e => {
             //else change it's value to true and pause the speech
             if(isSpeaking){
                 synth.resume();
-                
+                isSpeaking = false;
+                speechBtn.innerText = "Pause Speech";
             }else{
                 synth.pause();
-                
+                 isSpeaking = true;
+                speechBtn.innerText = "Resume Speech";
             }
             //checking if the utternance/speech in speaking process or not in every 100 ms
             //if not then set the value of isSpeaking to true and change the button text
